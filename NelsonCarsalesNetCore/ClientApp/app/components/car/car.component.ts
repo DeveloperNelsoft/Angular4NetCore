@@ -9,10 +9,10 @@ class CarInfo implements Car {
 }
 
 @Component({
-    selector: 'contact',
-    templateUrl: './contact.component.html'
+    selector: 'car',
+    templateUrl: './car.component.html'
 })
-export class ContactComponent implements OnInit {
+export class CarComponent implements OnInit {
 
     private rowData: any[];
     displayDialog: boolean;
@@ -35,6 +35,7 @@ export class ContactComponent implements OnInit {
     loadData() {
         this.carService.getCars()
             .subscribe(res => {
+                console.log('result in browser ' + res.result);
                 this.rowData = res.result;
             });
     }

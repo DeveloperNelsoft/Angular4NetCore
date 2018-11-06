@@ -13,7 +13,7 @@ import { InputTextModule, DataTableModule, ButtonModule, DialogModule } from 'pr
 
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
-import { ContactComponent } from './components/car/car.component';
+import { CarComponent } from './components/car/car.component';
 
 import { CarService } from './services/index';
 
@@ -30,9 +30,9 @@ class AppBaseRequestOptions extends BaseRequestOptions {
     declarations: [
         AppComponent,
         NavMenuComponent,
-        ContactComponent
+        CarComponent
     ],
-    providers: [ContactService,
+    providers: [CarService,
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         { provide: RequestOptions, useClass: AppBaseRequestOptions }],
     imports: [
@@ -44,7 +44,7 @@ class AppBaseRequestOptions extends BaseRequestOptions {
         InputTextModule, DataTableModule, ButtonModule, DialogModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'car', pathMatch: 'full' },
-            { path: 'car', component: ContactComponent },
+            { path: 'car', component: CarComponent },
             { path: '**', redirectTo: 'car' }
         ])
     ]
